@@ -15,12 +15,10 @@ ui <- fluidPage(
 # Define server logic
 server <- function(input, output) {
   output$nuforcTable <- renderTable({
-    suppressWarnings({
-      sc <- spark_connect(method = "databricks")
-      nuforc <- tbl(sc, in_catalog("austin_zaccor", "r-shiny", "scrubbed"))
-      nuforc_df <- collect(nuforc) %>% as.data.frame()
-      head(nuforc_df)
-    })
+    sc <- spark_connect(method = "databricks")
+    nuforc <- tbl(sc, in_catalog("austin_zaccor", "r-shiny", "scrubbed"))
+    nuforc_df <- collect(nuforc) %>% as.data.frame()
+    head(nuforc_df)
   })
 }
 
