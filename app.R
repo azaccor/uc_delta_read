@@ -1,3 +1,4 @@
+install.packages("DT")
 library(shiny)
 library(sparklyr)
 library(tidyverse)
