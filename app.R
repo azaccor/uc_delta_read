@@ -9,7 +9,7 @@ library(DT)
 ui <- fluidPage(
   titlePanel("NUFORC Data Viewer"),
   mainPanel(
-    tableOutput("nuforcTable")
+    tableOutput("nuforcTable"),
     tableOutput("nuforcTable2")
   )
 )
