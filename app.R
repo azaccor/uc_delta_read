@@ -10,8 +10,7 @@ library(DT)
 ui <- fluidPage(
   titlePanel("NUFORC Data Viewer"),
   mainPanel(
-    tableOutput("nuforcTable"),
-    tableOutput("nuforcTable2")
+    tableOutput("nuforcTable")
   )
 )
 
@@ -22,13 +21,9 @@ server <- function(input, output) {
   nuforc_df <- collect(nuforc) %>% as.data.frame()
 
   output$nuforcTable <- renderTable({
-    head(nuforc_df)  # Simply display the pre-processed data
+    nuforc_df  # Simply display the pre-processed data
   })
 }
-
-output$nuforcTable2 <- renderDataTable({
-    nuforc_df  # Display the full dataframe
-})
 
 # Run the application
 shinyApp(ui = ui, server = server)
