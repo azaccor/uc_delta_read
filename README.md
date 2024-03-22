@@ -1,1 +1,1 @@
-This is a simple delta UC read example in R
+This is a simple Unity Catalog enabled Delta table read example performed in SparklyR
